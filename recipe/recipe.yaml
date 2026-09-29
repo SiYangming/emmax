@@ -13,6 +13,9 @@ source:
 
 build:
   number: 0
+  # Prebuilt Linux ELF binaries; skip host relinking when building from macOS
+  dynamic_linking:
+    binary_relocation: false
   script:
     - mkdir -p "${PREFIX}/bin"
     - if [ -f emmax ]; then SRC=.; else SRC=emmax-beta-07Mar2010; fi
@@ -28,7 +31,7 @@ about:
   description: |
     Redistribution of UMICH EMMAX beta (07Mar2010) binaries as version 0.0.20100307.
     Linux x86_64 only. Cite Kang et al. Nat Genet 2010.
-  license: Other
+  license: LicenseRef-EMMAX-UMICH
   license_file: README
 
 extra:

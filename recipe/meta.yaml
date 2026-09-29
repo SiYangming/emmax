@@ -34,7 +34,7 @@ about:
   description: |
     Redistribution of UMICH EMMAX beta (07Mar2010) binaries as version 0.0.20100307.
     Linux x86_64 only. Cite Kang et al. Nat Genet 2010.
-  license: Other
+  license: LicenseRef-EMMAX-UMICH
 
 extra:
   recipe-maintainers:
