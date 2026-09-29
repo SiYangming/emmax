@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+# Version must match Docker tag: 0.0.20100307
+context:
+  version: "0.0.20100307"
+
+package:
+  name: emmax
+  version: ${{ version }}
+
+source:
+  path: ../upstream/emmax-beta-07Mar2010.tar.gz
+  sha256: c323e04f93fb5adefb139a0200f4d091c5e05e3bb8cefdb44081b16dbb521032
+
+build:
+  number: 0
+  script:
+    - mkdir -p "${PREFIX}/bin"
+    - if [ -f emmax ]; then SRC=.; else SRC=emmax-beta-07Mar2010; fi
+    - install -m 0755 "${SRC}/emmax" "${PREFIX}/bin/emmax"
+    - install -m 0755 "${SRC}/emmax-kin" "${PREFIX}/bin/emmax-kin"
+
+requirements:
+  run: []
+
+about:
+  homepage: http://csg.sph.umich.edu/kang/emmax/
+  summary: Efficient mixed-model association eXpedited (EMMAX) for GWAS
+  description: |
+    Redistribution of UMICH EMMAX beta (07Mar2010) binaries as version 0.0.20100307.
+    Linux x86_64 only. Cite Kang et al. Nat Genet 2010.
+  license: Other
+  license_file: README
+
+extra:
+  recipe-maintainers:
+    - SiYangming
